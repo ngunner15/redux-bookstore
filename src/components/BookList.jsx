@@ -1,4 +1,9 @@
+import { useSelector } from "react-redux";
+
 export function BookList() {
+
+  const books = useSelector((state) => state.books);
+
   return (
     <div className="container">
       <h1>Bookstore</h1>
@@ -16,16 +21,18 @@ export function BookList() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Batman: Year One</td>
-            <td>18.09</td>
-            <td>Graphic Novel</td>
-            <td>The story recounts Batmans first year as a crime-fighter</td>
-            <td>
-              <button>Delete</button>
-              <button>Edit</button>
-            </td>
-          </tr>
+          {books.map((item) => (
+            <tr key={item.id}>
+              <td>{item.name}</td>
+              <td>{item.price}</td>
+              <td>{item.category}</td>
+              <td>{item.description}</td>
+              <td>
+                <button>Delete</button>
+                <button>Edit</button>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
