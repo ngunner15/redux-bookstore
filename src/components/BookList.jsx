@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { useHistory } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export function BookList() {
 
@@ -36,7 +37,9 @@ export function BookList() {
               <td>{item.description}</td>
               <td>
                 <button>Delete</button>
-                <button>Edit</button>
+                <Link to={`/edit-book/${item.id}`}>
+                  <button>Edit</button>
+                </Link>
               </td>
             </tr>
           ))}
