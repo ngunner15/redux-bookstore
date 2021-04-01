@@ -1,14 +1,21 @@
 import { useSelector } from "react-redux";
+import { useHistory } from 'react-router-dom';
 
 export function BookList() {
 
   const books = useSelector((state) => state.books);
 
+  let history = useHistory();
+
+  const handleClick = () => {
+    history.push("/add-book");
+  }
+
   return (
     <div className="container">
       <h1>Bookstore</h1>
       <div>
-        <button className="btn">Add user</button>
+        <button className="btn" onClick={handleClick}>Add user</button>
       </div>
       <table>
         <thead>
