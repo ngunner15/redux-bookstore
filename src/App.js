@@ -2,20 +2,22 @@ import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
 import React from "react";
 import { BookList } from "./components/BookList";
+import { AddBook } from "./components/AddBook";
+import { EditBook } from "./components/EditBook";
 
 export default function App() {
   return (
     <Router>
       <div>
         <Switch>
-          <Route path="/">
-            <BookList />
-          </Route>
           <Route path="/add-book">
-            <h1>Add Book</h1>
+            <AddBook />
           </Route>
           <Route path="/edit-book">
-            <h1>Edit Book</h1>
+            <EditBook />
+          </Route>
+          <Route path="/">
+            <BookList />
           </Route>
         </Switch>
       </div>
