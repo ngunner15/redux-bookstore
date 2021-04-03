@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = [
   { id: 0, name: 'Inverting The Pyramid', price: '16.99', category: 'sports', description: 'A pioneering soccer book that chronicles the evolution of soccer tactics' },
-  { id: 1, name: 'Batman: Year One', price: '18.09', category: 'graphic novel', description: 'The story recounts Batmans first year as a crime-fighter' }
+  { id: 1, name: 'Batman: Year One', price: '18.09', category: 'graphic novel', description: 'The story recounts Batmans first year as a crime-fighter' },
 ];
 
 const booksSlice = createSlice({
@@ -14,7 +14,7 @@ const booksSlice = createSlice({
     },
     bookUpdated(state, action) {
       const { id, name, price, category, description } = action.payload;
-      const existingBook = state.find((book) => book.id === id);
+      const existingBook = state[id];
       if (existingBook) {
         existingBook.name = name;
         existingBook.price = price;
@@ -22,9 +22,16 @@ const booksSlice = createSlice({
         existingBook.description = description;
       }
     },
+    bookDeleted(state, action) {
+      const { id } = action.payload;
+      const existingBook = state[id];
+      if (existingBook) {
+        state = state.splice(state.indexOf(state[id]), 1);
+      }
+    },
   },
 });
 
-export const { bookAdded, bookUpdated } = booksSlice.actions;
+export const { bookAdded, bookUpdated, bookDeleted } = booksSlice.actions;
 
 export default booksSlice.reducer;
