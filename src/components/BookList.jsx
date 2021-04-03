@@ -1,16 +1,21 @@
-import { useSelector } from "react-redux";
+import { useDispatch ,useSelector } from "react-redux";
 import { useHistory } from 'react-router-dom';
 import { Link } from "react-router-dom";
+import { bookDeleted } from "./booksSlice";
 
 export function BookList() {
 
   const books = useSelector((state) => state.books);
-
-  let history = useHistory();
+  const dispatch = useDispatch();
+  const history = useHistory();
 
   const handleClick = () => {
     history.push("/add-book");
   }
+
+  const handleDelete = (id) => {
+    dispatch(bookDeleted({ id }));
+  };
 
   return (
     <div className="container">
@@ -36,7 +41,7 @@ export function BookList() {
               <td>{item.category}</td>
               <td>{item.description}</td>
               <td>
-                <button>Delete</button>
+                <button onClick={() => handleDelete(item.id)}>Delete</button>
                 <Link to={`/edit-book/${item.id}`}>
                   <button>Edit</button>
                 </Link>
