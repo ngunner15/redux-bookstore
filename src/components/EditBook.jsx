@@ -10,7 +10,7 @@ export function EditBook() {
   console.log(bookId);
   const book = useSelector((state) => state.books[bookId]);
   // const book = books[bookId];
-  console.log(book);
+  // console.log(book);
 
   const dispatch = useDispatch();
   const history = useHistory();

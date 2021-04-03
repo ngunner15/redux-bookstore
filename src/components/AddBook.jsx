@@ -25,7 +25,7 @@ export function AddBook() {
     if (name && price && category && description) {
       dispatch(
         bookAdded({
-          id: booksAmount + 1,
+          id: booksAmount,
           name,
           price,
           category,
