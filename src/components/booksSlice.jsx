@@ -24,9 +24,11 @@ const booksSlice = createSlice({
     },
     bookDeleted(state, action) {
       const { id } = action.payload;
-      const existingBook = state[id];
+      let newState = [...state];
+      const existingBook = newState.find(e => e.id === id);
       if (existingBook) {
-        state = state.splice(state.indexOf(state[id]), 1);
+        return newState.filter(e => e.id !== id);
+        // state = state.splice(state.indexOf(state[id]), 1);
       }
     },
   },
