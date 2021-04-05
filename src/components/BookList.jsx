@@ -44,7 +44,7 @@ export function BookList() {
           <tbody>
             {books.map((item) => (
               <tr key={item.id}>
-                <td>{item.name}</td>
+                <td className="book-name" onClick={() => handleEdit(item.id)}>{item.name}</td>
                 <td>{item.price}</td>
                 <td>{item.category}</td>
                 <td>{item.description}</td>
