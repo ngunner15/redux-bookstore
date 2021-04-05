@@ -28,7 +28,6 @@ const booksSlice = createSlice({
       const existingBook = newState.find(e => e.id === id);
       if (existingBook) {
         return newState.filter(e => e.id !== id);
-        // state = state.splice(state.indexOf(state[id]), 1);
       }
     },
   },

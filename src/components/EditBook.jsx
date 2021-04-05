@@ -8,10 +8,7 @@ import "../styles/App.css";
 export function EditBook() {
   const { pathname } = useLocation();
   const bookId = pathname.replace("/edit-book/", "");
-  console.log(bookId);
   const book = useSelector((state) => state.books[bookId]);
-  // const book = books[bookId];
-  // console.log(book);
 
   const dispatch = useDispatch();
   const history = useHistory();
