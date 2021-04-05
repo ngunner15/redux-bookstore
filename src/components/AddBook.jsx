@@ -3,6 +3,8 @@ import { useHistory } from "react-router-dom";
 import { useState } from "react";
 import { bookAdded } from "./booksSlice";
 
+import "../styles/App.css";
+
 export function AddBook() {
 
   const dispatch = useDispatch();
@@ -47,10 +49,10 @@ export function AddBook() {
 
   return (
     <div className="container">
-      <div>
+      <div className="heading">
         <h1>Add Book</h1>
       </div>
-      <div>
+      <div className="content">
         <label htmlFor="nameInput">Name</label>
         <input
           type="text"
