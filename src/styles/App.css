@@ -12,9 +12,7 @@
   color: #264653;
 }
 
-.content-btn {
-  align-self: center;
-}
+/* Table CSS */
 
 .content table {
   border-collapse: separate;
@@ -30,12 +28,13 @@
   text-align: left;
 }
 
-.content tbody tr {
-  border: 1px solid #999;
-  
+/* Button CSS */
+
+.content-btn {
+  align-self: center;
 }
 
-.content .action {
+.content-action {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -44,25 +43,28 @@
 .btn {
   cursor: pointer;
   border: none;
+  outline: none;
 }
 
-.btn-delete {
+.btn-delete, .btn-edit {
   background: #E24D28;
   color: beige;
-  padding: 0.8em;
+  padding: 0.5em;
   border-radius: 8px;
   font-size: medium;
+  transition: all .2s ease-in-out;
 }
 
 .btn-edit {
   background: #2A9D8F;
-  color: beige;
-  padding: 0.8em;
-  border-radius: 8px;
-  font-size: medium;
+  margin-left: 0.25em;
 }
 
-.content .btn-add {
+.btn-delete:hover, .btn-delete:focus, .btn-edit:hover, .btn-edit:focus {
+  transform: scale(1.15);
+}
+
+.btn-add {
   max-width: 4em;
   max-height: 4em;
   width: 1.5em;
