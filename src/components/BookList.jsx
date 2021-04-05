@@ -18,6 +18,10 @@ export function BookList() {
     dispatch(bookDeleted({ id }));
   };
 
+  const handleEdit = (id) => {
+    history.push(`/edit-book/${id}`);
+  };
+
   return (
     <div className="container">
       <div className="heading">
@@ -44,6 +48,7 @@ export function BookList() {
                 <td>{item.description}</td>
                 <td className="action">
                   <button className="btn btn-delete" onClick={() => handleDelete(item.id)}>Delete</button>
+                  <button className="btn btn-edit" onClick={() => handleEdit(item.id)}>Edit</button>
                 </td>
               </tr>
             ))}
