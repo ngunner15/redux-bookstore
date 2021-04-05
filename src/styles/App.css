@@ -12,3 +12,22 @@
   color: #264653;
 }
 
+.content table {
+  border-collapse: separate;
+  border-spacing: 0 0.5em;
+}
+
+.content th {
+  text-transform: uppercase;
+}
+
+.content td, .content th {
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.content tbody tr {
+  border: 1px solid #999;
+  
+}
+
