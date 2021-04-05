@@ -8,8 +8,9 @@
   flex-direction: column;
   justify-content: space-between;
   font-size: 1.2rem;
-  margin: 1.5em;
+  margin: 0 auto;
   color: #264653;
+  width: 90%;
 }
 
 /* Table CSS */
@@ -26,6 +27,22 @@
 .content td, .content th {
   padding: 0.5rem;
   text-align: left;
+}
+
+.content .book-name {
+  cursor: pointer;
+}
+
+.content .book-name:hover, .content .book-name:focus {
+  color: beige;
+}
+
+.content tbody tr:nth-child(odd) {
+  background-color: #e76f51;
+}
+
+.content tbody tr:nth-child(even) {
+  background-color: #f4a261;
 }
 
 /* Button CSS */
