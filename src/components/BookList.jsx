@@ -28,7 +28,9 @@ export function BookList() {
         <h1>Bookstore</h1>
       </div>
       <div className="content">
-        <button className="btn btn-add" onClick={handleClick}>&#43;</button>
+        <div className="content-btn">
+          <button className="btn btn-add" onClick={handleClick}>&#43;</button>
+        </div>
         <table>
           <thead>
             <tr>
