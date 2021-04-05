@@ -53,36 +53,40 @@ export function AddBook() {
         <h1>Add Book</h1>
       </div>
       <div className="content">
-        <label htmlFor="nameInput">Name</label>
-        <input
-          type="text"
-          id="nameInput"
-          onChange={handleName}
-          value={name}
-        />
-        <label htmlFor="priceInput">Price</label>
-        <input
-          type="text"
-          id="priceInput"
-          onChange={handlePrice}
-          value={price}
-        />
-        <label htmlFor="categoryInput">Category</label>
-        <input
-          type="text"
-          id="categoryInput"
-          onChange={handleCategory}
-          value={category}
-        />
-        <label htmlFor="descriptionInput">Description</label>
-        <input
-          type="text"
-          id="descriptionInput"
-          onChange={handleDescription}
-          value={description}
-        />
-        {error && error}
-        <button onClick={handleClick} className="btn">Add Book</button>
+        <div>
+          <label htmlFor="nameInput">Name</label>
+          <input
+            type="text"
+            id="nameInput"
+            onChange={handleName}
+            value={name}
+          />
+          <label htmlFor="priceInput">Price</label>
+          <input
+            type="text"
+            id="priceInput"
+            onChange={handlePrice}
+            value={price}
+          />
+          <label htmlFor="categoryInput">Category</label>
+          <input
+            type="text"
+            id="categoryInput"
+            onChange={handleCategory}
+            value={category}
+          />
+          <label htmlFor="descriptionInput">Description</label>
+          <input
+            type="text"
+            id="descriptionInput"
+            onChange={handleDescription}
+            value={description}
+          />
+        </div>
+        <div>
+          {error && error}
+          <button onClick={handleClick} className="btn btn-add">&#43;</button>
+        </div>
       </div>
     </div>
   );
