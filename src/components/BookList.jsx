@@ -1,7 +1,8 @@
-import { useDispatch ,useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from 'react-router-dom';
-import { Link } from "react-router-dom";
 import { bookDeleted } from "./booksSlice";
+
+import "../styles/App.css";
 
 export function BookList() {
 
@@ -19,37 +20,36 @@ export function BookList() {
 
   return (
     <div className="container">
-      <h1>Bookstore</h1>
-      <div>
-        <button className="btn" onClick={handleClick}>Add user</button>
+      <div className="heading">
+        <h1>Bookstore</h1>
       </div>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Category</th>
-            <th>Description</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {books.map((item) => (
-            <tr key={item.id}>
-              <td>{item.name}</td>
-              <td>{item.price}</td>
-              <td>{item.category}</td>
-              <td>{item.description}</td>
-              <td>
-                <button onClick={() => handleDelete(item.id)}>Delete</button>
-                <Link to={`/edit-book/${item.id}`}>
-                  <button>Edit</button>
-                </Link>
-              </td>
+      <div className="content">
+        <button className="btn btn-add" onClick={handleClick}>&#43;</button>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Category</th>
+              <th>Description</th>
+              <th>Actions</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {books.map((item) => (
+              <tr key={item.id}>
+                <td>{item.name}</td>
+                <td>{item.price}</td>
+                <td>{item.category}</td>
+                <td>{item.description}</td>
+                <td className="action">
+                  <button className="btn btn-delete" onClick={() => handleDelete(item.id)}>Delete</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
