@@ -56,8 +56,8 @@ export function EditBook() {
       <div className="heading">
         <h1>Edit Book</h1>
       </div>
-      <div className="content">
-        <div>
+      <div className="content-book">
+        <div className="content-form">
           <label htmlFor="nameInput">Name</label>
           <input
             type="text"
@@ -80,17 +80,18 @@ export function EditBook() {
             value={category}
           />
           <label htmlFor="descriptionInput">Description</label>
-          <input
+          <textarea
             type="text"
             id="descriptionInput"
+            rows="2"
             onChange={handleDescription}
             value={description}
           />
         </div>
-        <div>
+        <div className="content-btn">
           {error && error}
-          <button onClick={handleClick} className="btn">
-            Save Book
+          <button onClick={handleClick} className="btn btn-edit">
+            Save
         </button>
         </div>
       </div>
