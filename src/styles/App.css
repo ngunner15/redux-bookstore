@@ -31,3 +31,42 @@
   
 }
 
+.content .action {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.btn {
+  cursor: pointer;
+  border: none;
+}
+
+.btn-delete {
+  background: maroon;
+  color: beige;
+  padding: 0.8em;
+  border-radius: 8px;
+  font-size: medium;
+}
+
+.btn-edit {
+  background: #2A9D8F;
+  color: beige;
+  padding: 0.8em;
+  border-radius: 8px;
+  font-size: medium;
+}
+
+.content .btn-add {
+  max-width: 4em;
+  max-height: 4em;
+  width: 1.5em;
+  height: 1.5em;
+  font-size: 2.2em;
+  align-self: center;
+  background: #2A9D8F;
+  color: beige;
+  border-radius: 2em;
+  margin-bottom: 1em;
+}
