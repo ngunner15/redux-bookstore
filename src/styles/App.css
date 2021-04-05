@@ -3,3 +3,12 @@
   width: 100%;
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size: 1.2rem;
+  margin: 1.5em;
+  color: #264653;
+}
+
