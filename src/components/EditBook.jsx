@@ -1,8 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
-
 import { useState } from "react";
 import { bookUpdated } from "./booksSlice";
+
+import "../styles/App.css";
 
 export function EditBook() {
   const { pathname } = useLocation();
@@ -52,10 +53,10 @@ export function EditBook() {
 
   return (
     <div className="container">
-      <div>
+      <div className="heading">
         <h1>Edit Book</h1>
       </div>
-      <div>
+      <div className="content">
         <label htmlFor="nameInput">Name</label>
         <input
           type="text"
