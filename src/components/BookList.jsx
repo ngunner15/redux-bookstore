@@ -48,7 +48,7 @@ export function BookList() {
                 <td>{item.price}</td>
                 <td>{item.category}</td>
                 <td>{item.description}</td>
-                <td className="action">
+                <td className="content-action">
                   <button className="btn btn-delete" onClick={() => handleDelete(item.id)}>Delete</button>
                   <button className="btn btn-edit" onClick={() => handleEdit(item.id)}>Edit</button>
                 </td>
