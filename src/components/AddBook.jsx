@@ -10,41 +10,37 @@ export function AddBook() {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const [name, setName] = useState("");
-  const [price, setPrice] = useState("");
-  const [category, setCategory] = useState("");
-  const [description, setDescription] = useState("");
   const [error, setError] = useState(null);
+  const initialInputState = {name: '', price: '' , category: '', description: ''};
+  const [item, setItem] = useState(initialInputState);
 
-  const handleName = (e) => setName(e.target.value);
-  const handlePrice = (e) => setPrice(e.target.value);
-  const handleCategory = (e) => setCategory(e.target.value);
-  const handleDescription = (e) => setDescription(e.target.value);
+  const handleInputChange = (event) => {
+    const { name, value } = event.target; // Takes name and value from the input field
 
-  const booksAmount = useSelector((state) => state.books.length);
+    setItem({ ...item, [name]: value });  // ... makes shallow copy so setItem only changes the targeted name and value
+  }
+
+  const booksAmount = useSelector((state) => state.books.length); //useSelector makes state available from store
 
   const handleClick = () => {
-    if (name && price && category && description) {
+    if (item.name && item.price && item.category && item.description) {
       dispatch(
         bookAdded({
           id: booksAmount,
-          name,
-          price,
-          category,
-          description,
+          name: item.name,
+          price: item.price,
+          category: item.category,
+          description: item.description,
         })
       );
 
       setError(null);
-      history.push("/");
+      history.push("/");  // Redirects to the home page i.e. localhost:3000/
     } else {
       setError("Fill in all fields");
     }
 
-    setName("");
-    setPrice("");
-    setCategory("");
-    setDescription("");
+    setItem(initialInputState); // cleans up input fields when adding next book
   };
 
   return (
@@ -58,30 +54,34 @@ export function AddBook() {
           <input
             type="text"
             id="nameInput"
-            onChange={handleName}
-            value={name}
+            name="name"
+            onChange={handleInputChange}
+            value={item.name}
           />
           <label htmlFor="priceInput">Price</label>
           <input
             type="text"
             id="priceInput"
-            onChange={handlePrice}
-            value={price}
+            name="price"
+            onChange={handleInputChange}
+            value={item.price}
           />
           <label htmlFor="categoryInput">Category</label>
           <input
             type="text"
             id="categoryInput"
-            onChange={handleCategory}
-            value={category}
+            name="category"
+            onChange={handleInputChange}
+            value={item.category}
           />
           <label htmlFor="descriptionInput">Description</label>
           <textarea
             type="text"
             id="descriptionInput"
+            name="description"
             rows="2"
-            onChange={handleDescription}
-            value={description}
+            onChange={handleInputChange}
+            value={item.description}
           />
         </div>
         <div className="content-btn">
