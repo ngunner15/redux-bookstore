@@ -14,13 +14,13 @@ Hosting on Heroku Server - https://redux-bookstore15.herokuapp.com/
 ## Screenshots
 
 ### Home Page
-!["Screenshot of Main Page"]()
+!["Screenshot of Main Page"](https://github.com/ngunner15/redux-bookstore/blob/main/docs/redux-bookstore_main.PNG?raw=true)
 
 ### Add Book Page
-!["Screenshot of Add Book Page"]()
+!["Screenshot of Add Book Page"](https://github.com/ngunner15/redux-bookstore/blob/main/docs/redux-bookstore_add.PNG?raw=true)
 
 ### Edit Book Page
-!["Screenshot of Edit Book Page"]()
+!["Screenshot of Edit Book Page"](https://github.com/ngunner15/redux-bookstore/blob/main/docs/redux-bookstore_edit.PNG?raw=true)
 
 ## Setup
 
