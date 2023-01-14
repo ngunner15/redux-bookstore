@@ -2,8 +2,7 @@
 
 ## Live Demo
 
-Hosting on Heroku Server - https://redux-bookstore15.herokuapp.com/
-
+Hosting on Render Server - https://bookstore-8kj1.onrender.com
 ## Dependencies
 
 - redux
